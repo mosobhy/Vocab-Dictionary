@@ -22,7 +22,7 @@ Node *root = NULL;
 
 // helpers functions prototypes.
 Node *create();
-int index(char c);
+int Index(char c);
 bool unload_(Node *ptr);
 bool load(FILE *fpe, FILE *fpa);
 int check(const char *word, char *arr);
@@ -92,7 +92,7 @@ Node *create()
 }
 
 // declaring the function that returns the index of a char.( just lowercase )
-int index(char c)
+int Index(char c)
 {
     int apostrophe = 0;
     if (isalpha(c))
@@ -136,7 +136,7 @@ bool load(FILE *fpe, FILE *fpa)
         if (c != '\n')
         {
             // indexing the chars of the buffer.
-            int INDEX = index(c);
+            int INDEX = Index(c);
 
             if (ptr->children[INDEX] == NULL)
             {
@@ -181,7 +181,7 @@ int check(const char *word, char *arr)
     for(int i = 0, n = strlen(word); i <= n; i++)
     {
         // assign the index of the current char order.
-        int INDEX = index(word[i]);
+        int INDEX = Index(word[i]);
 
         if (word[i] == '\0')
         {
